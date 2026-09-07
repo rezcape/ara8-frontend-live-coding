@@ -59,7 +59,7 @@ Submit PR paling lambat **[8 September 2026, Pukul 18.30]**. PR yang masuk setel
 ## Catatan Penting
 
 - Pastikan repository hasil fork kalian bersifat **Publik**.
-- **Aturan AI:** Kalian **diperbolehkan** menggunakan AI asisten (seperti ChatGPT, Copilot, Cursor). Namun, dilarang keras menggunakan fitur _screenshot-to-code_ (memberikan gambar desain ke AI untuk digenerate otomatis tanpa kalian memikirkan logikanya). Kalian juga **wajib bisa menjelaskan** fungsi dari setiap baris kode yang kalian tulis atau _copy_ saat sesi review/interview nanti.
+- **Aturan AI:** Kalian **diperbolehkan** menggunakan AI asisten (seperti ChatGPT, Copilot, Cursor). Namun, dilarang keras menggunakan fitur _screenshot-to-code_ (memberikan gambar desain ke AI untuk digenerate otomatis tanpa kalian memikirkan logikanya). Kalian juga akan mendemokan pekerjaan kalian saat sesi review/interview nanti.
 - Jika ada kendala teknis atau pertanyaan, silakan bertanya ke panitia yang bertugas.
 
 Selamat mengerjakan dan _Good Luck_! 🔥
