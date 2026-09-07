@@ -33,7 +33,7 @@ git checkout -b [nama-kalian]-live-coding
 ### 4. Kerjakan Task
 
 - Baca panduan dan lihat desain UI (Soal 1, 2, dan 3) yang harus dikerjakan pada link Figma berikut:
-  **[Figma Live Coding ARA 8.0](https://www.figma.com/design/GL12yagvAqC2CP62bAggIr/Live-Coding-ARA-8.0?node-id=1-6&p=f&t=H38aKXcE3a8yQ0Bx-0)**
+  **[Figma Live Coding ARA 8.0](https://www.figma.com/design/GL12yagvAqC2CP62bAggIr/Live-Coding-ARA-8.0?node-id=0-1&p=f&t=B94OXx5C52cPabdi-0)**
 - Lakukan **commit secara berkala** dengan pesan commit yang jelas. _(Jangan hanya membuat 1 commit besar di akhir — kami ingin melihat proses dan alur kerja kalian)._
 
 ### 5. Push & Submit
