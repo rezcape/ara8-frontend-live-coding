@@ -1,0 +1,79 @@
+body {
+    background: #11111B;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+.box {
+    position: absolute;
+    background-color: #FAB387;
+}
+.box1 {
+    height: 250px;
+    width: 250px;
+    top: 0;
+    left: 0;
+}
+.box2 {
+    height: 250px;
+    width: 250px;
+    top: 0;
+    right: 0;
+}
+.box3 {
+    height: 250px;
+    width: 250px;
+    right: 0;
+    bottom: 0;
+}
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10 {
+    width: 150px;
+    height: 150px;
+}
+
+
+.box4 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box5 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box6 {
+    top: 35%;
+    left: 35%;
+}
+
+.box7 {
+    top: 35%;
+    left: 50%;
+}
+
+.box8 {
+    top: 35%;
+    left: 65%;
+}
+
+.box9 {
+    top: 50%;
+    left: 42%;
+}
+
+.box10 {
+    top: 50%;
+    left: 58%;
+}
