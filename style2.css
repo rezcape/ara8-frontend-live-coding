@@ -1,0 +1,147 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b111e; /* Gelap hitam navy */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+/* Header & Judul */
+.header {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Container Wrapper */
+.container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Layout Desktop: 4 kolom x 2 baris */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Card Styling Potret */
+.anime-card {
+    background-color: #151e30;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #222f49;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.anime-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b5078;
+}
+
+/* Box Poster Potret (Rasio 3:4) */
+.poster-box {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: #0f1624;
+}
+
+.poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Info Anime */
+.anime-info {
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.anime-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    /* Batasi maksimal 2 baris teks agar tinggi kartu seragam */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.anime-episodes {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Teks Status / Loading */
+.status-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    padding: 40px 0;
+}
+
+.status-text.error {
+    color: #ef4444;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN: Handphone / Layar Kecil (<= 768px)
+   =================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 16px;
+    }
+
+    .header {
+        margin-top: 5px;
+        margin-bottom: 24px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Di handphone: 1 kolom */
+    .anime-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 18px;
+    }
+
+    /* Menyembunyikan item ke-4 hingga ke-8 sehingga sisa 3 baris */
+    .anime-card:nth-child(n+4) {
+        display: none;
+    }
+}

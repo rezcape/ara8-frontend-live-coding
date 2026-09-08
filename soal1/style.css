@@ -1,0 +1,156 @@
+/* Reset default browser styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background gelap bukan hitam pekat */
+body {
+  background-color: #1a1e24;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* Garis di kiri layar */
+.left-vertical-line {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 36px;
+  width: 4px;
+  background-color: #262c36;
+  z-index: 10;
+}
+
+/* --- KOTAK 4 UJUNG (Warna Krem) --- */
+.corner-box {
+  position: fixed;
+  width: 72px;
+  height: 72px;
+  background-color: #edc75d; /* Krem hangat */
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.top-left {
+  top: 24px;
+  left: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-right {
+  top: 24px;
+  right: 24px;
+}
+
+.bottom-left {
+  bottom: 24px;
+  left: 56px;
+}
+
+.bottom-right {
+  bottom: 24px;
+  right: 24px;
+}
+
+/* Bulatan Ungu di tengah kotak kiri atas */
+.purple-circle {
+  width: 22px;
+  height: 22px;
+  background-color: #7b2cbf; /* Ungu */
+  border-radius: 50%;
+}
+
+.circle-inside-center {
+  margin: auto;
+}
+
+/* --- KOTAK TENGAH ATAS & TENGAH BAWAH (Warna Krem) --- */
+.edge-box {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 54px;
+  background-color: #edc75d; /* Krem */
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.top-center {
+  top: 24px;
+}
+
+.bottom-center {
+  bottom: 24px;
+}
+
+/* --- 5 KOTAK DI TENGAH LAYAR (Warna Krem) --- */
+.center-container {
+  display: flex;
+  flex-direction: row; /* Desktop: Horizontal */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 30;
+  padding: 100px 20px;
+}
+
+.center-box {
+  width: 80px;
+  height: 80px;
+  background-color: #edc75d; /* Krem */
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.center-box:hover {
+  transform: translateY(-4px);
+}
+
+/* --- RESPONSIVE MOBILE (HP) --- */
+@media (max-width: 768px) {
+  .center-container {
+    flex-direction: column; /* Mobile: Vertikal */
+    gap: 16px;
+  }
+
+  .center-box {
+    width: 68px;
+    height: 68px;
+  }
+
+  .corner-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .top-left,
+  .bottom-left {
+    left: 44px;
+  }
+
+  .left-vertical-line {
+    left: 20px;
+    width: 3px;
+  }
+
+  .edge-box {
+    width: 70px;
+    height: 44px;
+  }
+
+  .purple-circle {
+    width: 16px;
+    height: 16px;
+  }
+}
