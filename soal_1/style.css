@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #1e1e2e;
+    overflow: hidden;
+}
+
+.corner {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+}
+
+.top-left {
+    top: 0px;
+    left: 0px;
+}
+
+/* Kotak tengah atas */
+.top-center {
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+.top-right {
+    top: 0px;
+    right: 0px;
+}
+
+.bottom-left {
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottom-right {
+    bottom: 0px;
+    right: 0px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    background: #fab387;
+    border: 3px solid #fab387;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: #cba6f7;
+    border-radius: 50%;
+}
+
+/* Persegi panjang sisi kiri */
+.side-rect {
+    position: fixed;
+    left: 0;
+    top: 200px;
+    width: 100px;
+    height: calc(100vh - 200px);
+    background: #11111b;
+    z-index: 2;
+}
+
+/* --- KONTAINER 5 KOTAK CENTER --- */
+.center-grid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Pas tepat di titik tengah layar */
+    width: 340px;                     /* Dibatasi agar pas 3 kotak per baris (100*3 + jarak 20*2) */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;          /* Baris kedua (isi 2) otomatis rata tengah */
+    gap: 20px;                        /* Jarak antar kotak */
+    z-index: 3;
+}
+
+/* Ukuran dan warna disamakan persis dengan kotak tengah atas */
+.mid-cube {
+    width: 100px;
+    height: 100px;
+    background: #fab387;
+    border: 3px solid #fab387;
+}
+
+@media (max-width: 600px) {
+    /* 5 KOTAK TENGAH JADI 1 KOLOM KE BAWAH */
+    .center-grid {
+        flex-direction: column;   /* Berjajar ke bawah */
+        align-items: center;      /* Rata tengah horizontal */
+        width: auto;              /* Tidak perlu dikunci lebarnya */
+        gap: 8px;                 /* Jarak antar kotak vertikal */
+    }
+
+    .mid-cube {
+        width: 50px;              /* Ukuran disesuaikan agar muat tinggi layar HP */
+        height: 50px;
+    }
+
+    /* Perkecil elemen sudut & tepi */
+    .corner {
+        width: 90px;
+        height: 90px;
+    }
+
+    .top-center {
+        width: 55px;
+        height: 55px;
+    }
+
+    .circle {
+        width: 45px;
+        height: 45px;
+    }
+
+    .side-rect {
+        top: 90px;
+        width: 45px;
+        height: calc(100vh - 90px);
+    }
+}
