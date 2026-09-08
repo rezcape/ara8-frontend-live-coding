@@ -52,7 +52,7 @@ git push origin [nama-kalian]-live-coding
 
 ### 6. Deadline
 
-Submit PR paling lambat **[8 September 2026, Pukul 18.30]**. PR yang masuk setelah waktu tersebut tidak akan dinilai.
+Submit PR paling lambat **[8 September 2026, Pukul 19.30]**. PR yang masuk setelah waktu tersebut tidak akan dinilai.
 
 ---
 
