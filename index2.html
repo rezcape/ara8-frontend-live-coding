@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Anime Today</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="title">TOP ANIME TODAY</h1>
+    </header>
+
+    <main class="container">
+        <!-- Elemen container grid untuk menampung kartu anime -->
+        <div id="anime-grid" class="anime-grid">
+            <p id="loading-state" class="status-text">Memuat data anime...</p>
+        </div>
+    </main>
+
+    <!-- JavaScript untuk mengambil data dari Jikan API -->
+    <script>
+        const API_URL = 'https://api.jikan.moe/v4/top/anime';
+        const animeGrid = document.getElementById('anime-grid');
+
+        async function fetchTopAnime() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error('Gagal mengambil data dari API');
+                }
+                const result = await response.json();
+                
+                // Ambil 8 anime teratas untuk memenuhi 4 kolom x 2 baris desktop
+                const animeList = result.data.slice(0, 8);
+
+                // Bersihkan teks loading
+                animeGrid.innerHTML = '';
+
+                // Render setiap kartu anime ke dalam DOM
+                animeList.forEach(anime => {
+                    const title = anime.title;
+                    const episodes = anime.episodes ? `${anime.episodes} Episodes` : 'Episodes: N/A';
+                    const imageSrc = anime.images.webp.large_image_url || anime.images.jpg.large_image_url;
+
+                    const card = document.createElement('article');
+                    card.className = 'anime-card';
+                    card.innerHTML = `
+                        <div class="poster-box">
+                            <img src="${imageSrc}" alt="Poster ${title}" class="poster-img" loading="lazy">
+                        </div>
+                        <div class="anime-info">
+                            <h2 class="anime-name">${title}</h2>
+                            <p class="anime-episodes">${episodes}</p>
+                        </div>
+                    `;
+                    animeGrid.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                animeGrid.innerHTML = `<p class="status-text error">Gagal memuat anime. Silakan refresh kembali.</p>`;
+            }
+        }
+
+        // Panggil fungsi saat dokumen selesai dimuat
+        fetchTopAnime();
+    </script>
+</body>
+</html>
